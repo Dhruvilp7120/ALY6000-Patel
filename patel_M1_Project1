@@ -1,0 +1,78 @@
+> print("DHRUVIL SUNILBHAI PATEL")
+[1] "DHRUVIL SUNILBHAI PATEL"
+> library(vcd)
+Loading required package: grid
+> sales<- c(7,11,15,20,19,11,18,10,6,22)
+> temperature<- c(69,81,77,84,80,97,87,70,65,90)
+> input <- c('sales', 'temperature')]
+Error: unexpected ']' in "input <- c('sales', 'temperature')]"
+> 
+> plot(x = sales, y = temperature,
++ xlab = "sales",
++ ylab = "temperature",
++ xlim = c(0, 100),
++ ylim = c(0, 100),
++ main = "sales vs temperature"
++ )
+> mean(temperature)
+[1] 80
+> sales<- sales[! sales %in% c(20)]
+> sales
+[1]  7 11 15 19 11 18 10  6 22
+> temperature <- append(temperature,16,2)
+> temperature
+ [1] 69 81 16 77 84 80 97 87 70 65 90
+> names <- c("tom","dick","harry")
+> names
+[1] "tom"   "dick"  "harry"
+> y <- matrix(1:10, nrow=5, ncol=2)
+> y
+     [,1] [,2]
+[1,]    1    6
+[2,]    2    7
+[3,]    3    8
+[4,]    4    9
+[5,]    5   10
+> s <- c(7,11,15,20,19,11,18,10,6,22)
+> t <- c(69,81,77,84,80,97,87,70,65,90)
+> iscale <- data.frame(s,t)
+> iscale
+    s  t
+1   7 69
+2  11 81
+3  15 77
+4  20 84
+5  19 80
+6  11 97
+7  18 87
+8  10 70
+9   6 65
+10 22 90
+> summary(iscale)
+       s               t        
+ Min.   : 6.00   Min.   :65.00  
+ 1st Qu.:10.25   1st Qu.:71.75  
+ Median :13.00   Median :80.50  
+ Mean   :13.90   Mean   :80.00  
+ 3rd Qu.:18.75   3rd Qu.:86.25  
+ Max.   :22.00   Max.   :97.00  
+> data1 <- read.csv(file.choose(), header=T)
+Warning message:
+In read.table(file = file, header = header, sep = sep, quote = quote,  :
+  incomplete final line found by readTableHeader on 'C:\Users\dhruvil patel\Downloads\Student.csv'
+> data1
+  StudentID First          Last Math Science Social.Studies
+1        11   Bob         Smith   90      80             67
+2        12  Jane         Weary   75      NA             80
+3        10   Dan Thornton, III   65      75             70
+4        40  Mary       O'Leary   90      95             92
+> data1[0,]
+[1] StudentID      First          Last           Math           Science       
+[6] Social.Studies
+<0 rows> (or 0-length row.names)
+> save.image("C:\\Users\\dhruvil patel\\Desktop\\Assignment_one.RData")
+> q()
+> ls(data1)
+[1] "First"          "Last"           "Math"           "Science"       
+[5] "Social.Studies" "StudentID"     
+> 
