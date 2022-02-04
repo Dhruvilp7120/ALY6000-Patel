@@ -1,0 +1,146 @@
+Q1)
+print("Dhruvil Patel")
+Q2)
+bio <- read.csv(file.choose(), header=T)
+Q3)
+head(bio)
+tail(bio)
+str(bio)
+Q4)
+counts <- data.frame(bio)
+count(counts,"species")
+Q5)
+count(counts,"species")
+Q6)
+ tmp<-table(bio$species)
+> data.frame(tmp)
+Q7)
+w <- table(bio$species)
+w
+class(w)
+Q8)
+t <- as.data.frame(w)
+class(t)
+t
+Q9)
+t <- as.data.frame(w)
+class(t)
+t
+Q10)
+t$Freq
+Q11)
+cSpec <- table(bio$species)
+cSpec
+class(cSpec)
+Q12)
+cSpecPct <- prop.table(table(bio$species)) 
+cSpecPct
+class(cSpecPct)
+
+cSpecPct <- prop.table(table(bio$species)) 
+cSpecPct
+class(cSpecPct)
+
+Q13)
+u <- as.data.frame(cSpecPct)
+class(u)
+u
+Q14) Q15)
+barrr <- par(mar = c(10,5,5,8)) 
+barplot(cSpecPct, ylab = "%",
+col = "LightBlue",
+main = "PLOT2 Fish Relative Frequency",
+las = 2,
+cex.names = 1.2, 
+cex.axis = 1, 
+cex.lab=1.5, 
+ylim = c(0, 0.4) 
+)
+par(barrr)
+Q16)
+u
+class(u)
+d <- u %>%
+arrange(desc(Freq)) 
+d
+class(d)
+Q17)
+names(d) <- c('Species','RelativeFreq')
+> d
+Q18)
+d <- transform(d, cumfreq = cumsum(RelativeFreq)) #Adding cumfreq
+d
+d <- transform(d, counts = (RelativeFreq * nrow(temp2))) #Adding counts
+d
+d <- transform(d, cumcounts = cumsum(d$counts)) #Adding cumcounts
+d
+Q19)
+def_par <- par(mar = c(10,5,5,8))
+Q20)
+barplot(d$counts, width = 1, space = 0.15,
+border = NA, axes = F,
+ylim = c(0, 3.05 * max(d$counts, na.rm = TRUE)),
+ylab = 'Cumulative Counts',
+cex.axis = 1.7,
+names.arg = d$Species,
+main = 'Species Pareto',
+las = 2
+)
+Q21)
+def_par <- par(mar = c(10,5,5,8))
+barplot(d$counts, width = 1, space = 0.15,
+border = NA, axes = F,
+ylim = c(0, 3.05 * max(d$counts, na.rm = TRUE)),
+ylab = 'Cumulative Counts',
+cex.axis = 1.7,
+names.arg = d$Species,
+main = 'Species Pareto',
+las = 2
+)
+lines(d$cumcounts, type = 'b', pch = 19, col = 'cyan4')
+Q22)
+def_par <- par(mar = c(10,5,5,8))
+barplot(d$counts, width = 1, space = 0.15,
+border = NA, axes = F,
+ylim = c(0, 3.05 * max(d$counts, na.rm = TRUE)),
+ylab = 'Cumulative Counts',
+cex.axis = 1.7,
+names.arg = d$Species,
+main = 'Species Pareto',
+las = 2
+)
+lines(d$cumcounts, type = 'b', pch = 19, col = 'cyan4') #Cumulative counts line
+box(col = 'grey62')
+
+Q23)
+def_par <- par(mar = c(10,5,5,8))
+barplot(d$counts, width = 1, space = 0.15,
+border = NA, axes = FALSE,
+ylim = c(0, 3.05 * max(d$counts, na.rm = TRUE)),
+ylab = 'Cumulative Counts',
+cex.axis = 1.7,
+names.arg = d$Species,
+main = 'Species Pareto',
+las = 2
+)
+lines(d$cumcounts, type = 'b', pch = 19, col = 'cyan4')
+box(col = 'grey62')
+axis(side = 2, at = d$cumcounts, tick = TRUE,line = NA, #left side AXIS/ y-axis
+col.ticks = "grey62",col = "grey62", cex.axis=0.8)
+
+Q24)
+def_par <- par(mar = c(10,5,5,8))
+barplot(d$counts, width = 1, space = 0.15,
+border = NA, axes = FALSE,
+ylim = c(0, 3.05 * max(d$counts, na.rm = TRUE)),
+ylab = 'Cumulative Counts',
+cex.axis = 1.7,
+names.arg = d$Species,
+main = 'PATEL FINISHED Species Pareto',
+las = 2
+)
+lines(d$cumcounts, type = 'b', pch = 19, col = 'cyan4')
+box(col = 'grey62')
+axis(side = 2, at = d$cumcounts, tick = TRUE,line = NA, #left side AXIS/ y-axis
+col.ticks = "grey62",col = "grey62", cex.axis=0.8)
+
